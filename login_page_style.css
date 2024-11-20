@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b34141;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    border: 1px solid #c5535f;
+}
+
+.login-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #721c24;
+}
+
+.login-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #c5535f;
+    border-radius: 4px;
+    outline: none;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b30000;
+    border: none;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #a71d2a;
+}
+
+.error {
+    color: #ff0000; /* Bright red for errors */
+    font-size: 12px; /* Adjust font size for better readability */
+    display: block; /* Ensures error messages appear on new lines */
+    margin-top: -10px; /* Positions error closer to the input field */
+    margin-bottom: 10px; /* Adds spacing after the error message */
+    font-family: Arial, sans-serif; /* Ensures consistent font styling */
+}
