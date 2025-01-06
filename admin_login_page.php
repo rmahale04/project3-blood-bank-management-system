@@ -20,7 +20,7 @@
 </html> -->
 <?php
 require_once("conn.php");
-
+session_start();
 $usernameOrEmailErr = $passwordErr = $loginErr = "";
 $usernameOrEmail = $password = "";
 
@@ -62,10 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Verify password
                 if (password_verify($password, $dbPassword)) {
                     // Successful login, redirect to admin dashboard
-                    session_start();
                     $_SESSION["admin_username"] = $dbUsername;
-                    header("Location: home_page.html");
-                    exit();
+                    if(isset($_SESSION['admin_username'])){
+                        header("Location: admin_home_page.php");
+                        exit();
+                    }
                 } else {
                     $loginErr = "Invalid password";
                 }
@@ -94,11 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-container">
         <h2>Admin Login</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <input type="text" name="username_or_email" placeholder="Username or Email" 
-                   value="<?php echo htmlspecialchars($usernameOrEmail); ?>">
+            <input type="text" name="username_or_email" maxlength="200" placeholder="Username or Email" 
+                   value="<?php echo htmlspecialchars($usernameOrEmail); ?>" required>
             <span class="error"><?php echo $usernameOrEmailErr; ?></span>
 
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" maxlength="16" minlength="8" placeholder="Password" required>
             <span class="error"><?php echo $passwordErr; ?></span>
 
             <span class="error"><?php echo $loginErr; ?></span>

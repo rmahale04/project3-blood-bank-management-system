@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     mysqli_stmt_bind_param($insertStmt, "ssss", $username, $email, $hashPassword, $contact);
                     // Execute the insert query
                     if (mysqli_stmt_execute($insertStmt)) {
-                        header("Location: admin_login_page.html");
+                        header("Location: admin_login_page.php");
                         exit();
                     } else {
                         echo "Error: " . mysqli_error($conn);
@@ -153,19 +153,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="registration-container">
         <h2>Admin Registration</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email); ?>">
+            <input type="email" name="email" placeholder="Email" maxlength="60" value="<?php echo htmlspecialchars($email); ?>">
             <span class="error"><?php echo $emailErr; ?></span>
 
-            <input type="text" name="username" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>">
+            <input type="text" name="username" placeholder="Username" maxlength="20" value="<?php echo htmlspecialchars($username); ?>">
             <span class="error"><?php echo $usernameErr; ?></span>
 
-            <input type="number" name="contact_no" placeholder="Contact Number" value="<?php echo htmlspecialchars($contact); ?>">
+            <input type="text" name="contact_no" placeholder="Contact Number" maxlength="10" pattern="[0-9]{10}" value="<?php echo htmlspecialchars($contact); ?>"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" required>
+
+
             <span class="error"><?php echo $contactErr; ?></span>
 
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" maxlength="60">
             <span class="error"><?php echo $passwordErr; ?></span>
 
-            <input type="password" name="confirm_password" placeholder="Confirm Password">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" maxlength="16" minlength="8">
             <span class="error"><?php echo $confirmPasswordErr; ?></span>
 
             <button type="submit">Register</button>

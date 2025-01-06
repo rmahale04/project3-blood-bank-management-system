@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #b91d1d;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        nav {
+            background-color: #800000;
+            position: fixed;
+            top: 50px; /* Directly below the header */
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: rgb(177, 46, 46);
+        }
+
+        footer {
+            background-color: #b91d1d;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-top: 110px; /* Header height (50px) + Nav height (60px) */
+            padding: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #b91d1d;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: rgb(177, 46, 46);
+        }
+
+        .section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            /* width: 80%; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blood Bank Management System</h1>
+    </header>
+
+   <nav>
+            <a href="admin_home_page.php">Home</a>
+            <a href="add_donor.php">Add Donor</a>
+            <a href="add_donation.php">Add Donation</a>
+            <a href="view_donation.php">Donations</a>
+            <a href="hospital_registration_page.php">Add Hospital</a>
+            <a href="view_request_list.php">Manage Requests</a>
+            <a href="hospital_list.php">Hospitals</a>
+            <a href="donor_list.php">Donors</a>
+            <a href="stock.php">Stock</a>
+            <a href="supply_list.php">Supply</a>
+            <a href="admin_logout_session.php">log out</a>
+            <!-- <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button">Search</button>
+            </div> -->
+    </nav>
+    <div class="content"></div>
+
+    <!-- <footer>
+        <p>&copy; Blood Bank Management System</p>
+    </footer> -->
+</body>
+</html>
