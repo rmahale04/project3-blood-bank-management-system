@@ -290,7 +290,8 @@ Complete documentation includes:
 - UI Screenshots
 - System Design
 
-📄 **Documentation:** *(Add Google Drive or GitHub PDF link here)*
+📄 **View Complete Documentation:**  
+[Blood Bank Management System Documentation (PDF)](https://drive.google.com/file/d/1O4LfdTNaOy9ETZz-MErIn37T-ocv-dk9/view?usp=sharing)
 
 ---
 
